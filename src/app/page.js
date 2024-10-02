@@ -1,9 +1,9 @@
-import NavBar from './_components/NavBar.jsx';
+import SideBar from './_components/SideBar/SideBar.jsx';
 
 export default function Home() {
   return (
-    <>
-    <NavBar/>
-    </>
+    <p className='m-auto text-3xl'>
+     Welcom to Tailwind Documentation
+    </p>
   );
 }

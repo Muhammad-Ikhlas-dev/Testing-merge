@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import NavBar from "./_components/NAVBAR/NavBar.jsx";
+import SideBar from "./_components/SideBar/SideBar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,13 +20,20 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  console.log('layout re-rendered')
   return (
     <html lang="en">
     <link rel="icon" href='tailwind_logo.ico'/>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} antialiased
+        bg-white text-black bg-[#0F172A] overflow-x-hidden
+        dark:bg-gradient-to-tr  from-[#111C31] via-[#111C31] to-[#1A3252] dark:text-white
+        h-[100%] w-[100%]`}>
+        <NavBar/>
+        <div className="flex w-[100%]">
+        <SideBar/>
         {children}
+        </div>
       </body>
     </html>
   );
